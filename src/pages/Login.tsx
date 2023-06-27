@@ -1,9 +1,9 @@
-import { createUserWithEmailAndPassword } from "firebase/auth";
+import { signInWithEmailAndPassword } from "firebase/auth";
 import { useState } from "react"
 import { auth } from "../firebase/config";
 import { useNavigate } from "react-router-dom";
 
-const SignUp = () => {
+const Login = () => {
   const navigate = useNavigate();
   const [email, setEmail] = useState<string>('');
   const [password, setPassword] = useState<string>('');
@@ -13,7 +13,7 @@ const SignUp = () => {
     e.preventDefault();
 
     try {
-      await createUserWithEmailAndPassword(auth, email, password);
+      await signInWithEmailAndPassword(auth, email, password);
       navigate('/');
     }catch(error){
       setError(error.message)
@@ -48,7 +48,7 @@ const SignUp = () => {
           onChange={(e) =>setPassword(e.target.value)} placeholder="password" className="input input-bordered" />
         </div>
         <div className="form-control mt-6">
-          <button className="btn">Sign Up</button>
+          <button className="btn">Login</button>
         </div>
       </div>
     </div>
@@ -58,4 +58,4 @@ const SignUp = () => {
   </form>
 }
 
-export default SignUp
+export default Login

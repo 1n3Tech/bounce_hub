@@ -1,9 +1,11 @@
-import LandingNav from "../components/LandingNav"
+import ImageDisplay from "../components/ImageDisplay"
+import Nav from "../components/Navbar"
 const Home = () => {
   
   return (
-    <div className="max-w-4xl mx-auto">
-      <LandingNav />
+    <div className="max-w-5xl mx-auto">
+      <Nav />
+      <ImageDisplay />
     </div>
     
   )
