@@ -16,9 +16,9 @@ const useFirestore = (collectionName: string) => {
         const getData = async () => {
             try{
                 const q = query(collection(db, collectionName), orderBy("createdAt", "desc"));
-                unsubscribe = onSnapshot(q, (QuerySnapshot) => {
+                unsubscribe = onSnapshot(q, (querySnapshot) => {
                     const images: Image[] = [];
-                    QuerySnapshot.forEach((doc) => {
+                    querySnapshot.forEach((doc) => {
                         const imageUrl = doc.data().imageUrl;
                         images.push({ imageUrl })
                     });

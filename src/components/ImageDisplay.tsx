@@ -1,7 +1,7 @@
 import useFirestore from "../assets/hooks/useFirestore";
 
 const ImageDisplay  = () => {
-  const {docs:  isLoading} = useFirestore('images');
+  const {docs: pics, isLoading} = useFirestore('pics');
 if(isLoading) {
   return(
     <div className="text-center mt-10">
@@ -12,8 +12,9 @@ if(isLoading) {
 
   return (
   <div>
-      <div className="card w-[40rem] bg-neutral shadow-xl image-full">
-      <figure><img src="" alt="Shoes" /></figure>
+    {pics.map((image) => (
+      <div key={image.imageUrl} className="card w-[40rem] bg-neutral shadow-xl image-full">
+      <figure><img src={image.imageUrl} alt="Shoes" /></figure>
       <div className="card-body">
         <h2 className="card-title">Shoes!</h2>
         <p>If a dog chews shoes whose shoes does he choose?</p>
@@ -22,6 +23,7 @@ if(isLoading) {
         </div>
       </div>
     </div>
+    ))}
   </div>
   )
 }
