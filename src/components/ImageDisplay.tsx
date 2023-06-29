@@ -1,7 +1,7 @@
 import useFirestore from "../assets/hooks/useFirestore";
 
 const ImageDisplay  = () => {
-  const {docs: images, isLoading} = useFirestore('images');
+  const {docs:  isLoading} = useFirestore('images');
 if(isLoading) {
   return(
     <div className="text-center mt-10">
