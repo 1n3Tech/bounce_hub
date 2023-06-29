@@ -12,7 +12,7 @@ const navbar = () => {
   
   return (
     <div className="navbar bg-base-100 justify-between w-full">
-  <a className="normal-case text-xl">BounceHub</a>
+  <a className="btn btn-ghost normal-case text-xl">BounceHub</a>
   <button onClick={handleLogout} className="btn btn-ghost">Logout</button>
 </div>
   )

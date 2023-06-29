@@ -3,8 +3,6 @@ import { useEffect, useState } from 'react';
 import { db } from '../../firebase/config';
 
 type Image = {
-    createdAt: Date,
-    userEmail: string,
     imageUrl: string
 }
 
@@ -22,9 +20,7 @@ const useFirestore = (collectionName: string) => {
                     const images: Image[] = [];
                     QuerySnapshot.forEach((doc) => {
                         const imageUrl = doc.data().imageUrl;
-                        const createdAt = doc.data().createdAt.toDate();
-                        const userEmail = doc.data().userEmail;
-                        images.push({ imageUrl, createdAt, userEmail })
+                        images.push({ imageUrl })
                     });
                     setDocs(images);
                     setIsLoading(false);
