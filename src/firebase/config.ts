@@ -3,6 +3,7 @@ import { getAuth } from "firebase/auth"
 import { getStorage } from "firebase/storage";
 import { getFirestore } from "firebase/firestore";
 
+
 const firebaseConfig = {
   apiKey: "AIzaSyAAOeyT_-Im5NgXk60KoIPyyIR_TALCw4A",
   authDomain: "bounce-hub.firebaseapp.com",
@@ -10,8 +11,8 @@ const firebaseConfig = {
   projectId: "bounce-hub",
   storageBucket: "bounce-hub.appspot.com",
   messagingSenderId: "35621264611",
-  appId: "1:35621264611:web:9902a46eea3abc440439d6",
-  measurementId: "G-6NB1CHDLSZ"
+  appId: "1:35621264611:web:189b16889c84e6450439d6",
+  measurementId: "G-23FL81529V"
 };
 
 // Initialize Firebase
