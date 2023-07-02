@@ -11,19 +11,21 @@ if(isLoading) {
 }
 
   return (
-  <div>
+    <div className="flex flex-row items-center justify-centers w-full flex-1">
+  <div className="carousel carousel-center space-x-3 w-full rounded-box">
     {pics.map((image) => (
-      <div key={image.imageUrl} className="card w-[40rem] bg-neutral shadow-xl image-full">
+      <div id="item" key={image.imageUrl} className="card w-full bg-neutral shadow-xl image-full">
       <figure><img src={image.imageUrl} alt="Shoes" /></figure>
       <div className="card-body">
-        <h2 className="card-title">Shoes!</h2>
-        <p>If a dog chews shoes whose shoes does he choose?</p>
+        <h2 className="card-title">Movie 1!</h2>
+        <p>Woa is this the first Movie?</p>
         <div className="card-actions justify-end">
           <button className="btn btn-base-100 w-70">View</button>
         </div>
       </div>
     </div>
     ))}
+  </div>
   </div>
   )
 }
